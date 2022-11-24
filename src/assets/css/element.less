@@ -1,0 +1,19 @@
+
+.el-sub-menu__title * {
+  vertical-align: middle;
+}
+
+.menu-wrap .el-menu {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: none;
+  background-color: var( --bg-color);
+  .el-sub-menu__title,.el-menu-item {
+    color: #eee;
+    &:hover,.el-sub-menu__title:hover,&.is-active {
+      color:var(--bg-color);
+      background-color: #eee;
+    }
+  }
+}
