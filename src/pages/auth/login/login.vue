@@ -16,7 +16,7 @@
           <el-row>
             <el-col :span="24">
               <el-form-item label="用户名" prop="username">
-                <el-input v-model="form.username" placeholder="请输入用户名" />
+                <el-input v-model="form.username" placeholder="请输入用户名admin" />
               </el-form-item>
             </el-col>
             <el-col :span="24">
@@ -24,7 +24,7 @@
                 <el-input
                   v-model="form.password"
                   type="password"
-                  placeholder="请输入密码"
+                  placeholder="请输入密码admin"
                 />
               </el-form-item>
             </el-col>

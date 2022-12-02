@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    
+
     .toggle-button {
       right: unset;
     }
@@ -22,10 +22,14 @@
       right: 8px;
     }
   }
-  // .el-menu-vertical-demo:not(.el-menu--collapse) {
-  //   width: 200px;
-  //   min-height: 400px;
-  // }
+  .el-drawer {
+    background-color: var(--bg-color);
+  }
+  .el-drawer__body {
+    .el-menu {
+      width: 100%;
+    }
+  }
   .el-menu {
     width: var(--el-aside-width);
     height: 100%;

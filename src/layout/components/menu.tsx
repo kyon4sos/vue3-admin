@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import useAppStore from '@/store/app';
 import { ElIcon, ElMenu, ElMenuItem, ElSubMenu, ElDrawer } from 'element-plus';
@@ -16,18 +16,23 @@ export default defineComponent({
     const store = useAppStore();
     const drawer = ref(false);
 
-    const showMenuhandler = () => {
+    const showMenuHandler = () => {
       drawer.value = true;
     };
-    useEvent([{ name: 'showMenu', handler: showMenuhandler }]);
+    useEvent([{ name: 'showMenu', handler: showMenuHandler }]);
     const { isCollapse } = storeToRefs(store);
     const { md } = useWidth();
+
+    const collapsed = computed(() => {
+      if (md.value) return false;
+      return isCollapse.value;
+    });
 
     const render = (menus: readonly RouteRecordRaw[], path?: string) => {
       return menus.map((menu) => {
         const { children, meta } = menu;
-        const { title, icon, hidde } = meta ?? {};
-        if (hidde || !title) {
+        const { title, icon, hidden } = meta ?? {};
+        if (hidden || !title) {
           return null;
         }
         if (children && children.length) {
@@ -63,7 +68,7 @@ export default defineComponent({
           <ElMenu
             collapseTransition={false}
             defaultActive={defaultActive}
-            collapse={isCollapse.value}
+            collapse={collapsed.value}
             router
           >
             {render(items)}

@@ -4,6 +4,7 @@
       <el-card class="box-card" header="Welcome! 王立群">
         <el-row justify="center">
           <el-col
+            class="mb-16"
             v-for="item in items"
             :key="item.id"
             :xs="24"
