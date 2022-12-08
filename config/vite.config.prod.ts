@@ -90,6 +90,15 @@ export default mergeConfig(
     ],
     build: {
       sourcemap: true,
+      // rollupOptions: {
+      //   output: {
+      //     manualChunks: {
+      //       chart: ['echarts', 'vue-echarts'],
+      //       vue: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+      //     },
+      //   },
+      // },
+      // chunkSizeWarningLimit: 2000,
     },
   },
   baseConfig
