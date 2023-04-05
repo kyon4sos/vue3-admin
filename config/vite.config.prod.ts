@@ -15,7 +15,7 @@ const cdnMap = {
     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue-router/4.0.13/vue-router.global.prod.min.js',
   'echarts':
     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/echarts/5.3.0-rc.1/echarts.js',
-  'element-ui':
+  'element-plus':
     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/element-plus/2.0.4/index.full.min.js',
   'pinia':
     'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/pinia/2.0.11/pinia.iife.prod.min.js',
@@ -67,12 +67,7 @@ export default mergeConfig(
             name: 'element-plus',
             global: 'ElementPlus',
           },
-          {
-            name: 'pinia',
-            global: 'Pinia',
-            spare:
-              'https://cdn.jsdelivr.net/npm/pinia@2.0.25/dist/pinia.iife.min.js',
-          },
+
           {
             name: 'echarts',
             global: 'echarts',
